@@ -39,6 +39,7 @@ module EasyTranslate
       # Construct the request
       request = Net::HTTP::Post.new(uri.request_uri)
       request.add_field('X-HTTP-Method-Override', 'GET')
+      request.add_field('Referer', 'https://www.myupchar.com')
       request.body = body
       # Fire and return
       response = http.request(request)
